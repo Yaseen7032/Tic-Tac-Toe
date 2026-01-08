@@ -1,0 +1,169 @@
+/* ===== General Styling ===== */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    transition: background 0.3s;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+/* ===== Game Mode Animation ===== */
+.mode-toggle {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.mode-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, #00f9bb, #00c6ff);
+    color: white;
+    box-shadow: 0 0 15px #00f9bb;
+}
+
+.mode-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Dark Mode */
+.dark-mode .mode-btn {
+    background: #333;
+    color: white;
+}
+.dark-mode .mode-btn {
+    background: #555; /* inactive buttons */
+    color: white;
+}
+
+.dark-mode .mode-btn.active {
+    background: linear-gradient(135deg, #ff5722, #ff9800); /* active button in dark mode */
+    color: white;
+    box-shadow: 0 0 15px #ff5722;
+}
+
+/* ===== Theme Toggle ===== */
+#theme-toggle {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.dark-mode #theme-toggle {
+    background: white;
+    color: black;
+}
+
+/* ===== Board ===== */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px auto;
+    width: 320px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 12px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 8px #00f9bb;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    background: #ddd;
+}
+
+/* ===== Winning Cells ===== */
+.win {
+    background: linear-gradient(135deg, #f104a2, #6602a8);
+    color: white;
+    animation: glow 0.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px red; }
+    to { box-shadow: 0 0 20px orange; }
+}
+
+/* ===== Fade Out Animation ===== */
+.fade-out {
+    animation: fadeOut 0.1s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+}
+
+/* ===== Status ===== */
+#status {
+    font-size: 1.5rem;
+    margin: 12px;
+}
+
+/* ===== Reset Button ===== */
+#reset {
+    padding: 10px 22px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #007BFF;
+    color: white;
+}
+
+.dark-mode #reset {
+    background: #ff5722;
+}
+
+/* ===== Dark Mode ===== */
+.dark-mode {
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .cell {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .cell:hover {
+    background: #555;
+}
